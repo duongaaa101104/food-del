@@ -4,17 +4,20 @@ import bcrypt from "bcrypt";
 import validator from "validator";
 import nodemailer from "nodemailer";
 
-// --- CẤU HÌNH NODEMAILER ---
+// --- CẤU HÌNH NODEMAILER KHUYÊN DÙNG CHO RENDER ---
 const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
+    port: 587, // Thay 465 bằng 587
+    secure: false, // Với port 587, secure phải là false
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
+    },
+    tls: {
+        // Giúp tránh lỗi chứng chỉ SSL trên một số môi trường cloud
+        ciphers: 'SSLv3' 
     }
 });
-
 // --- HÀM PHỤ TRỢ: GỬI OTP ---
 const sendOTP = async (email, otp) => {
     try {
