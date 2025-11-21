@@ -118,4 +118,21 @@ const updateStatus = async (req, res) => {
         res.json({ success: false, message: "Error during status update" });
     }
 }
-export { placeOrder, verifyOrder ,userOrders,listOrders,updateStatus }
+
+// Thêm hàm xóa đơn hàng
+const removeOrder = async (req, res) => {
+    try {
+        // Lấy orderId từ body gửi lên
+        const { orderId } = req.body;
+        
+        // Tìm và xóa đơn hàng trong Database
+        await orderModel.findByIdAndDelete(orderId);
+        
+        res.json({ success: true, message: "Đã xóa đơn hàng" });
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: "Lỗi server" });
+    }
+}
+
+export { placeOrder, verifyOrder ,userOrders,listOrders,updateStatus,removeOrder }

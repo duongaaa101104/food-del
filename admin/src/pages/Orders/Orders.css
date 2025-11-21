@@ -29,6 +29,49 @@
     padding: 10px;
     outline: none;
 }
+
+/* Style cho khung chứa nút select và nút xóa */
+.order-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 120px; /* Đảm bảo khung không quá bé */
+}
+
+.status-select {
+  padding: 10px;
+  border: 1px solid tomato;
+  background-color: #ffebe6;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Style cho nút xóa */
+.delete-btn {
+  padding: 8px 10px;
+  background-color: #ff4d4d; /* Màu đỏ cảnh báo */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background-color: #cc0000; /* Đậm hơn khi hover */
+}
+
+/* Cập nhật grid layout cho .order-item để chứa thêm cột action nếu cần */
+/* Nếu layout hiện tại bị vỡ, hãy đảm bảo grid-template-columns đủ chỗ */
+/* Ví dụ: */
+.order-item {
+  /* Giữ nguyên css cũ của bạn, nhưng đảm bảo cột cuối đủ rộng */
+  /* grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr; -> có thể cần chỉnh lại nếu nút bị chèn */
+  align-items: start; /* Căn lề trên */
+}
+
 @media (max-width:1000px) {
     .order-item {
         font-size: 12px;

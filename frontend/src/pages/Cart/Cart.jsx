@@ -10,12 +10,12 @@ const Cart = () => {
     <div className="cart">
       <div className="cart-items">
         <div className="cart-items-title">
-          <p>Items</p>
-          <p>Title</p>
-          <p>Price</p>
-          <p>Quantity</p>
-          <p>Total</p>
-          <p>Remove</p>
+          <p>Ảnh minh họa</p>
+          <p>Tên</p>
+          <p>Giá</p>
+          <p>Số lượng</p>
+          <p>Tổng</p>
+          <p>Xóa</p>
         </div>
         <br />
         <hr />
@@ -29,7 +29,7 @@ const Cart = () => {
                   <p>${item.price}</p>
                   <p>{cartItems[item._id]}</p>
                   <p>${item.price * cartItems[item._id]}</p>
-                  <p onClick={() => removeFromCart(item._id)} className='cross'>x</p>
+                  <p onClick={() => removeFromCart(item._id)} className='cross'>X</p>
                 </div>
                 <hr />
               </div>
@@ -39,32 +39,32 @@ const Cart = () => {
       </div>
       <div className="cart-bottom">
         <div className="cart-total">
-          <h2>Cart Total</h2>
+          <h2>Tổng giỏ hàng</h2>
           <div className="cart-total-details">
-            <p>Subtotal</p>
+            <p>Tổng sản phẩm</p>
             <p>{getTotalCartAmount()}</p>
             <hr />
           </div>
           <div className="cart-total-details">
-            <p>Delivery Fee</p>
+            <p>Phí giao hàng</p>
             <p>${getTotalCartAmount()===0?0:2}</p>
             <hr />
           </div>
           <div className="cart-total-details">
-            <b>Total</b>
+            <b>Tổng thanh toán</b>
             <b>{getTotalCartAmount()===0?0:getTotalCartAmount()+2}</b>
 
 
           </div>
-          <button onClick={()=>navigate('/order')}>PROCEED TO CHECK OUT</button>
+          <button onClick={()=>navigate('/order')}>Xác nhận</button>
         </div>
         
         <div className="cart-promocode">
           <div>
-            <p>If you have a promo code, Enter it here</p>
+            <p>Nếu bạn có mã khuyến mãi. Nhập vào đây</p>
             <div className='cart-promocode-input'>
-              <input type="text" placeholder='promo code' />
-              <button>Submit</button>
+              <input type="text" placeholder='mã ' />
+              <button>Kiểm tra</button>
             </div>
           </div>
         </div>

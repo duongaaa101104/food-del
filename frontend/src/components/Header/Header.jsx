@@ -4,9 +4,9 @@ export const Header = () => {
   return (
     <div className='header'>
       <div className="header-contents">
-        <h2>Order your favourite food here</h2>
-        <p> Choose from a diverse menu featuring a delectable array of dishes crafted with the finest ingredients and culinary expertise. Our mission is to satisfy your cravings and elevate your dining experience, one delicious meal at a time </p>
-        <button> View Menu</button>
+        <h2>Đặt món ăn yêu thích của bạn ở đây</h2>
+        <p> Chọn từ thực đơn đa dạng bao gồm một loạt các món ăn ngon lành được chế biến từ những nguyên liệu tốt nhất và chuyên môn ẩm thực. Sứ mệnh của chúng tôi là thỏa mãn cơn thèm ăn của bạn và nâng cao trải nghiệm ăn uống của bạn, mỗi lần một bữa ăn ngon. </p>
+        <button> Xem món ăn</button>
       </div>
 
     </div>

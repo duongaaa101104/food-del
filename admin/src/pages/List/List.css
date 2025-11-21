@@ -1,13 +1,61 @@
+.list {
+    color: #6d6d6d;
+    font-size: max(1vw, 10px); /* Kích thước font linh hoạt */
+}
+
+/* Bố cục container chính */
+.list-table {
+    flex: 1;
+}
+
+/* Thiết lập bố cục Grid cho các hàng (tiêu đề và dữ liệu) */
 .list-table-format {
+    display: grid;
+    /* Định nghĩa 5 cột với tỷ lệ phù hợp: 
+       Ảnh: 0.5fr, Tên: 2fr, Danh Mục: 1fr, Giá: 1fr, Xóa: 0.5fr */
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 0.5fr;
+    align-items: center;
+    gap: 10px; /* Khoảng cách giữa các cột */
     padding: 12px 15px;
     border: 1px solid #cacaca;
     font-size: 13px;
+    border-collapse: collapse; /* Loại bỏ khoảng cách giữa các border */
 }
 
+/* Tiêu đề bảng */
 .list-table-format.title {
     background-color: #f9f9f9;
+    font-weight: bold;
+    color: black;
+    border-top: 1px solid #cacaca; 
+    border-bottom: 1px solid #cacaca;
 }
 
+/* Ẩn border bên trong và chỉ giữ lại border ngoài cho các ô dữ liệu (tùy chọn) */
+.list-table-format p {
+    margin: 0; /* Đảm bảo không có margin mặc định */
+}
+
+/* Hình ảnh */
 .list-table-format img {
     width: 50px;
+    height: 50px; /* Đảm bảo hình ảnh vuông */
+    object-fit: cover; /* Giúp hình ảnh không bị méo */
+}
+
+/* Con trỏ cho nút Xóa */
+.list-table-format .cursor {
+    cursor: pointer;
+    font-weight: bold;
+    color: red; /* Tùy chọn: làm nổi bật nút Xóa */
+    text-align: center;
+}
+
+/* Tùy chỉnh cho mobile/màn hình nhỏ (giữ nguyên kích thước và font) */
+@media (max-width: 600px) {
+    .list-table-format {
+        grid-template-columns: 0.5fr 1.5fr 1fr 1fr 0.5fr;
+        font-size: 12px;
+        padding: 8px 10px;
+    }
 }

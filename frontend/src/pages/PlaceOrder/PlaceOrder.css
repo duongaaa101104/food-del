@@ -38,3 +38,60 @@
 .place-order .cart-total button {
     margin-top: 30px;
 }
+/* --- GIAO DIỆN CHỌN PHƯƠNG THỨC THANH TOÁN --- */
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer; /* Biến con trỏ thành hình bàn tay để biết là bấm được */
+    transition: 0.2s;
+    background-color: white;
+}
+
+.payment-option:hover {
+    background-color: #f9f9f9;
+    border-color: tomato;
+}
+
+/* Style cho ô được chọn */
+.payment-option.selected {
+    border: 1px solid tomato;
+    background-color: #fff0ed;
+}
+
+/* Hình tròn giả làm nút Radio */
+.dot-select {
+    height: 18px;
+    width: 18px;
+    border: 2px solid #ccc;
+    border-radius: 50%; /* Bo tròn thành hình tròn */
+    background-color: white;
+    position: relative;
+}
+
+/* Khi được chọn thì hình tròn đổi màu */
+.payment-option.selected .dot-select {
+    border-color: tomato;
+}
+
+.payment-option.selected .dot-select::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: tomato;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

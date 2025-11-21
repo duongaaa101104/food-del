@@ -87,8 +87,45 @@
 }
 
 
-@media (max-width: 1050px) {
-    .navbar .logo {
-        width: 140px;
+/* Thêm vào Navbar.css */
+
+.navbar-search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid #a9a9a9;
+    padding: 8px 15px;
+    border-radius: 25px; /* Bo tròn */
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.navbar-search-container:hover {
+    border-color: tomato; /* Đổi màu viền khi di chuột vào */
+}
+
+.navbar-search-container input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    width: 200px; /* Chiều rộng ô nhập */
+    color: #49557e;
+}
+
+.navbar-search-container .search-icon {
+    width: 20px;
+    cursor: pointer;
+}
+
+/* Responsive cho điện thoại: Thu nhỏ ô tìm kiếm lại */
+@media (max-width: 900px) {
+    .navbar-search-container {
+        padding: 5px 10px;
+    }
+    .navbar-search-container input {
+        width: 100px;
+        font-size: 14px;
     }
 }
+
